@@ -1,0 +1,25 @@
+# Dependencias y directorios de build
+node_modules/
+dist/
+build/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Variables de entorno
+.env
+.env.local
+
+# Temporales
+*.tmp
+*.temp
