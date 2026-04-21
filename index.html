@@ -404,10 +404,32 @@
                                     <input type="number" class="form-control" id="ingresos" placeholder="Ej: 1000" min="0" step="0.01">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="egresos">Egresos Mensuales (USD)</label>
-                                    <input type="number" class="form-control" id="egresos" placeholder="Ej: 600" min="0" step="0.01">
+                                    <label for="arriendo">Arriendo (USD)</label>
+                                    <input type="number" class="form-control" id="arriendo" placeholder="Ej: 300" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="alimentacion">Alimentación (USD)</label>
+                                    <input type="number" class="form-control" id="alimentacion" placeholder="Ej: 200" min="0" step="0.01">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="varios">Varios (USD)</label>
+                                    <input type="number" class="form-control" id="varios" placeholder="Ej: 100" min="0" step="0.01">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group" style="background: #f0f7ff; padding: 1rem; border-radius: 8px; border-left: 4px solid var(--primary-color);">
+                                    <label style="margin: 0; font-weight: 600; color: var(--primary-color);">Total de Gastos Mensuales</label>
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary-color); margin-top: 0.5rem;" id="totalGastos">USD 0.00</div>
                                 </div>
                             </div>
                         </div>

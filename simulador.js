@@ -3,15 +3,25 @@
  */
 function calcular() {
     try {
-        // Leer valores de ingresos y egresos
+        // Leer valores de ingresos
         const ingresos = parseFloat(document.getElementById('ingresos').value);
-        const egresos = parseFloat(document.getElementById('egresos').value);
+        
+        // Leer valores de gastos (arriendo, alimentación, varios)
+        const arriendo = parseFloat(document.getElementById('arriendo').value) || 0;
+        const alimentacion = parseFloat(document.getElementById('alimentacion').value) || 0;
+        const varios = parseFloat(document.getElementById('varios').value) || 0;
+        
+        // Calcular total de gastos
+        const egresos = arriendo + alimentacion + varios;
 
         // Validar que los valores sean números válidos
-        if (isNaN(ingresos) || isNaN(egresos) || ingresos < 0 || egresos < 0) {
-            alert('Por favor, ingresa valores válidos para ingresos y egresos');
+        if (isNaN(ingresos) || ingresos < 0) {
+            alert('Por favor, ingresa un valor válido para ingresos');
             return;
         }
+
+        // Mostrar total de gastos
+        document.getElementById('totalGastos').textContent = `USD ${egresos.toFixed(2)}`;
 
         // Calcular disponible
         const disponible = calcularDisponible(ingresos, egresos);
@@ -67,11 +77,14 @@ function calcular() {
  */
 function limpiarFormulario() {
     document.getElementById('ingresos').value = '';
-    document.getElementById('egresos').value = '';
+    document.getElementById('arriendo').value = '';
+    document.getElementById('alimentacion').value = '';
+    document.getElementById('varios').value = '';
     document.getElementById('monto').value = '';
     document.getElementById('plazo').value = '';
     document.getElementById('tasa').value = '';
 
+    document.getElementById('totalGastos').textContent = 'USD 0.00';
     document.getElementById('lblDisponibleValor').textContent = 'USD 0.00';
     document.getElementById('lblCapacidadValor').textContent = 'USD 0.00';
     document.getElementById('lblInteresValor').textContent = 'USD 0.00';
